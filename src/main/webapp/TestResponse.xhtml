@@ -8,7 +8,7 @@
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
 			Hello <h:outputText value="#{user.firstName}"></h:outputText>. Your orders are: <br></br>
-			<h:dataTable value = "#{orders}" var = "order"
+			<h:dataTable value = "#{formController.service.orders}" var = "order"
 			styleClass = "ordersTable"
 			headerClass = "ordersTableHeader"
 			rowClasses = "ordersTableOddRow, ordersTableEvenRow">

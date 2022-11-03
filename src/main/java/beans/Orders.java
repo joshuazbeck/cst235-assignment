@@ -6,6 +6,11 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+/**
+ * This is the object used to hold a list of Order objects
+ * @author Josh Beck
+ *
+ */
 @ManagedBean
 @ViewScoped
 public class Orders {

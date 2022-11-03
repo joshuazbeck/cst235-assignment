@@ -1,5 +1,10 @@
 package beans;
 
+/**
+ * This is an object used to hold an order's information
+ * @author schoolslimes
+ *
+ */
 public class Order {
 
 	String orderNumber;
