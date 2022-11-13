@@ -26,12 +26,5 @@ public class Orders {
 	
 	public Orders() {
 		orders = new ArrayList<Order>();
-		
-		Order order1 = new Order("abc", "order1", 1.2f, 11);
-		Order order2 = new Order("cba", "order2", 3.4f, 111);
-		Order order3 = new Order("def", "order3", 5.6f, 1111);
-		orders.add(order1);
-		orders.add(order2);
-		orders.add(order3);
 	}
 }

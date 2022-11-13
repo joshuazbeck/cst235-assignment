@@ -1,5 +1,11 @@
 package controllers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -23,11 +29,11 @@ public class FormController {
 	@Inject
 	OrdersBusinessInterface service;
 	
-	@EJB
-	MyTimerService timer;
 	public OrdersBusinessInterface getService() {
 		return service;
 	}
+	
+
 	//Code that is executed on form submit
 	public String onSubmit() {
 		
@@ -44,7 +50,6 @@ public class FormController {
 		// Inject the orders into the POST request
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("orders", orders.getOrders());
 
-		timer.setTimer(10000);
 		
 		return "TestResponse.xhtml";
 	}

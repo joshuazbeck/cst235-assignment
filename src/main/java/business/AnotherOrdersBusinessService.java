@@ -25,16 +25,7 @@ public class AnotherOrdersBusinessService implements OrdersBusinessInterface {
      */
     public AnotherOrdersBusinessService() {
        	// Set orders 
-		List<Order> ordersArr = new ArrayList<Order>();
-		
-		Order order1 = new Order("dogs", "order1", 2.2f, 222);
-		Order order2 = new Order("ice", "order2", 2.4f, 22);
-		Order order3 = new Order("hotdogs", "order3", 2.6f, 2);
-		ordersArr.add(order1);
-		ordersArr.add(order2);
-		ordersArr.add(order3);
-		
-		setOrders(ordersArr);
+    	orders = new ArrayList<Order>();
     }
 
 	/**
@@ -49,10 +40,5 @@ public class AnotherOrdersBusinessService implements OrdersBusinessInterface {
 		return this.orders;
 	}
 
-	@Override
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-		
-	}
 
 }

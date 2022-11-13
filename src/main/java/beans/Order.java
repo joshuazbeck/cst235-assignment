@@ -7,6 +7,7 @@ package beans;
  */
 public class Order {
 
+	int id;
 	String orderNumber;
 	String productName;
 	float price;
@@ -42,12 +43,19 @@ public class Order {
 		this.price = 0.0f;
 		this.quantity = 0;
 	}
-	public Order(String orderNumber, String productName, float price, int quantity) {
+	public Order(int id, String orderNumber, String productName, float price, int quantity) {
 		super();
+		this.id = id;
 		this.orderNumber = orderNumber;
 		this.productName = productName;
 		this.price = price;
 		this.quantity = quantity;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

@@ -3,6 +3,7 @@ package business;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -20,23 +21,15 @@ import beans.Order;
 public class OrdersBusinessService implements OrdersBusinessInterface {
 
 	private List<Order> orders;
+	
+	@EJB
+	private OrdersDataService service;
     /**
      * Default constructor. 
      */
     public OrdersBusinessService() {
     	
-       	// Set orders 
-		List<Order> ordersArr = new ArrayList<Order>();
-		
-		Order order1 = new Order("cats", "order1", 1.2f, 11);
-		Order order2 = new Order("gum", "order2", 3.4f, 111);
-		Order order3 = new Order("seeds", "order3", 5.6f, 1111);
-		ordersArr.add(order1);
-		ordersArr.add(order2);
-		ordersArr.add(order3);
-		
-		setOrders(ordersArr);
-		
+   
     }
 
 	/**
@@ -49,13 +42,8 @@ public class OrdersBusinessService implements OrdersBusinessInterface {
 
 	@Override
 	public List<Order> getOrders() {
-		return this.orders;
+		return service.findAll();
 	}
 
-	@Override
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-		
-	}
 
 }
