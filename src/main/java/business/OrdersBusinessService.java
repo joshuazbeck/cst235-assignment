@@ -19,8 +19,6 @@ import beans.Order;
 @LocalBean
 @Alternative
 public class OrdersBusinessService implements OrdersBusinessInterface {
-
-	private List<Order> orders;
 	
 	@EJB
 	private OrdersDataService service;

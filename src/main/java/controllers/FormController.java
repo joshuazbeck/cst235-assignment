@@ -48,7 +48,7 @@ public class FormController {
 		
 		Orders orders = new Orders();
 		// Inject the orders into the POST request
-		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("orders", orders.getOrders());
+		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("orders", service.getOrders());
 
 		
 		return "TestResponse.xhtml";
