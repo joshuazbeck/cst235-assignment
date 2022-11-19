@@ -1,10 +1,14 @@
 package beans;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * This is an object used to hold an order's information
  * @author schoolslimes
  *
  */
+
+@XmlRootElement
 public class Order {
 
 	int id;
