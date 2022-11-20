@@ -11,6 +11,11 @@ import javax.ws.rs.core.MediaType;
 
 import beans.Order;
 
+/**
+ * A REST API for returning all the orders provided
+ * @author Josh Beck
+ *
+ */
 @RequestScoped
 @Path("/orders")
 public class OrdersRestService {
@@ -18,6 +23,10 @@ public class OrdersRestService {
 	@Inject
 	OrdersBusinessInterface service;
 	
+	/**
+	 * Get the orders as JSON
+	 * @return
+	 */
 	@GET
 	@Path("/getjson")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -25,18 +34,15 @@ public class OrdersRestService {
 		return service.getOrders();
 	}
 	
+	/**
+	 * Get the orders as XML
+	 * @return
+	 */
 	@GET
 	@Path("/getxml")
 	@Produces(MediaType.APPLICATION_XML)
 	public Object[] getOrdersAsXml() {
 		return service.getOrders().toArray(new Order[0]);
 	}
-	
-//	@POST
-//	@Path("/getxml")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Object[] getOrdersAsXml() {
-//		return service.getOrders().toArray(new Order[0]);
-//	}
 
 }
