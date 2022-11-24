@@ -10,13 +10,16 @@
 <h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<h:form>
-				First Name:<h:inputText value="#{user.firstName}" /> <br></br>
-				Last Name:<h:inputText value="#{user.lastName}" /> <br></br>
-				<h:commandButton action="#{formController.onSubmit()}" value="submit"/>
-				<h:commandButton action="#{formController.onFlash(user)}" value="Flash"></h:commandButton>
-			</h:form>
-			<h:messages />
+			<div align="center"> 
+				<div align="center"> 
+					<form  method="post" action="j_security_check">
+						Username: <h:inputText id="j_username" autocomplete="off" /><br/>
+						Password: <h:inputSecret id="j_password" autocomplete="off" /><br/>
+						<h:commandButton type="submit" value="Submit" />
+					</form>
+				</div>
+			</div>
+
 		</ui:define>
 
 	</ui:composition>

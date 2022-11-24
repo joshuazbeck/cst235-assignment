@@ -7,7 +7,7 @@
 <h:body>
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			Hello <h:outputText value="#{user.firstName}"></h:outputText>. Your orders are: <br></br>
+			<h:outputText value="#{user.firstName}"></h:outputText><br></br>
 			<h:dataTable value = "#{formController.service.orders}" var = "order"
 			styleClass = "ordersTable"
 			headerClass = "ordersTableHeader"
@@ -32,9 +32,10 @@
 				<f:facet name = "header">Quantity</f:facet>
 				#{order.quantity}
 			</h:column>
-			<h:button>Login Again</h:button>
 			</h:dataTable>
-			Last Name: <h:outputText value="#{user.lastName}"></h:outputText>
+			<h:form>
+				<h:commandButton action="#{formController.onLogoff()}" value="Log Out"/>
+			</h:form>
 		</ui:define>
 	</ui:composition>
 
